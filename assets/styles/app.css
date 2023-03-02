@@ -11,7 +11,9 @@ body {
     margin: 20;
     display: flex;
     text-align: justify;
+    line-height: 2em;
     flex-direction: column;
+    background: #ECF2FF center / cover no-repeat fixed;
 }
 
 header.navbar-container {
@@ -26,13 +28,18 @@ header.navbar-container {
 }
 
 header .jumbotron .title {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     margin-block: 1rem;
+    /* text-transform: uppercase; */
+    /* font-weight: 700; */
+    color: #3E54AC;
+    text-shadow: 1px 1px 1px #919191, 1px 2px 1px #919191, 1px 3px 1px #919191, 1px 4px 1px #919191, 1px 2px 1px #919191, 1px 3px 1px #919191, 1px 3px 1px #919191, 1px 4px 1px #919191, 1px 4px 1px #919191, 1px 5px 1px #919191, 1px 9px 3px rgba(16, 16, 16, 0.4), 1px 11px 5px rgba(16, 16, 16, 0.2), 1px 12px 17px rgba(16, 16, 16, 0.2), 1px 15px 30px rgba(16, 16, 16, 0.4);
 }
 
 header .jumbotron p {
-    font-size: 0.85rem;
-    line-height: 0.5rem;
+    font-size: 0.75rem;
+    line-height: 0.25rem;
+    color: #3E54AC;
 }
 
 header.navbar-container .nav-list ul {
@@ -51,27 +58,33 @@ header.navbar-container .nav-list li a {
     text-decoration: none;
     font-size: 1.05rem;
     font-weight: 500;
-    color: black;
+    color: #3E54AC;
     padding: .5rem 1.5rem;
-    border-radius: 999px;
+    border-radius: 25px;
     transition: all .2s ease-in-out;
 }
 
 header.navbar-container .nav-list a:hover {
-    background-color: #425c77;
-    color: white;
+    background-color: #3E54AC;
+    color: #ECF2FF;
 }
 
 main {
     padding: 20px;
     display: flex;
     gap: 1.5rem;
+    color: #ECF2FF;
 }
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    background-color: #3E54AC;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(15px);
+    padding: 35px;
+    margin-bottom: 2rem;
 }
 
 #content {
@@ -82,6 +95,8 @@ main {
 
 .featured-logo {
     width: 100px;
+    object-fit: cover;
+    object-position: center;
 }
 
 article section hr {
@@ -100,6 +115,10 @@ section .content-item img {
 
 section .content-item .content-description {
     flex: 3;
+}
+
+section hr {
+    color: #ECF2FF;
 }
 
 main aside {
@@ -128,8 +147,14 @@ main aside .social-media li {
 main aside .social-media li a {
     text-decoration: none;
     font-size: 1.5rem;
-    color: black;
+    color: #ECF2FF;
     transition: all .1s ease-in-out;
+}
+
+main aside section table th,
+td {
+    padding-top: 10px;
+    padding-left: 10px;
 }
 
 .profile img {
@@ -138,7 +163,44 @@ main aside .social-media li a {
 
 footer {
     padding: 20px;
-    color: black;
+    color: #3E54AC;
     text-align: center;
     font-weight: bold;
+}
+
+
+/* Medium devices (landscape tablets, 768px and down) */
+
+@media screen and (max-width: 1200px) {
+    header.navbar-container {
+        flex-direction: column;
+        gap: 1em 2em;
+    }
+    header.navbar-container .nav-list ul {
+        flex-wrap: wrap;
+        column-gap: .5rem;
+    }
+    header .jumbotron .title {
+        text-align: center;
+    }
+    main {
+        padding: 1rem 3rem;
+        flex-flow: column nowrap;
+    }
+    main .content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    main .content .content-description .title {
+        font-size: 3rem;
+    }
+    main .content .content-description p {
+        font-size: 1rem;
+    }
+    main .content .content-image {
+        order: -1;
+    }
+    main aside {
+        align-self: center;
+    }
 }
